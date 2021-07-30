@@ -12,4 +12,5 @@ RUN mkdir -p /opt/git/synthea
 WORKDIR /opt/git/synthea
 
 RUN git clone https://github.com/synthetichealth/synthea.git /opt/git/synthea/
-RUN /opt/git/synthea/gradlew build check test --no-daemon
+RUN /opt/git/synthea/gradlew build
+RUN /opt/git/synthea/gradlew check test
