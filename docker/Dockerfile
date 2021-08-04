@@ -19,3 +19,7 @@ RUN git clone https://github.com/synthetichealth/synthea.git /opt/git/synthea/
 # github.com/synthetichealth/synthea/releases
 RUN wget github.com/synthetichealth/synthea/releases/download/master-branch-latest/synthea-with-dependencies.jar
 RUN java -jar synthea-with-dependencies.jar -h
+
+COPY ./run_synthea.sh /opt/git/synthea
+RUN chmod +x /opt/git/synthea/run_synthea.sh
+ENTRYPOINT ["/opt/git/synthea/run_synthea.sh"]
