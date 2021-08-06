@@ -186,5 +186,7 @@ gcloud healthcare fhir-stores export bq "${fhir_store}" \
 color_print "Finished!" "${GREEN}"
 
 color_print "Started flattening tables..." "${GREEN}"
+. venv3/bin/activate
+python FlattenBigQuery.py "${bq_dataset}"
 color_print "Finished!" "${GREEN}"
 

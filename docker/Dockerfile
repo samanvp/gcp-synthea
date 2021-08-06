@@ -33,6 +33,7 @@ RUN python3 -m venv /opt/git/synthea/venv3 && \
     python3 -m pip install --upgrade google-api-core && \
     python3 -m pip install --upgrade google-cloud-bigquery && \
     deactivate
+COPY docker/FlattenBigQuery.py /opt/git/synthea
 
 COPY docker/run_synthea.sh /opt/git/synthea
 RUN chmod +x /opt/git/synthea/run_synthea.sh
